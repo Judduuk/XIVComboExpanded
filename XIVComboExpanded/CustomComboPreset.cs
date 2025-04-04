@@ -2663,6 +2663,12 @@ public enum CustomComboPreset
     [CustomComboInfo("Optimize Surging Tempest", "Optimize refresh of Surging Tempest to avoid overcapping when Inner Release is used, and to maximize potency during potions  This will defer refreshing Surging Tempest if the buff would be at greater than 50 seconds when Inner Release comes off cooldown, and will allow the buff to go as low as 10 seconds remaining while a DPS potion is active, to potentially squeeze in an extra Storm's Path during the potion effect.", WAR.JobID)]
     WarriorOptimizeSurgingTempestFeature = 2114,
 
+    [SectionCombo("Single Target")]
+    [IconsCombo([WAR.Onslaught, UTL.ArrowLeft, WAR.Upheaval])]
+    [ExpandedCustomCombo]
+    [CustomComboInfo("A Dashing Upheaval", "Replace Onslaught with Upheaval when available.", WAR.JobID)]
+    WarriorDashingUpheaval = 2116,
+
     [SectionCombo("Area of Effect")]
     [IconsCombo([WAR.MythrilTempest, UTL.ArrowLeft, WAR.Overpower])]
     [CustomComboInfo("Mythril Tempest Combo", "Replace Mythril Tempest with its combo chain.", WAR.JobID)]
@@ -2697,6 +2703,12 @@ public enum CustomComboPreset
     [ExpandedCustomCombo]
     [CustomComboInfo("Primal Release Feature", "Replace Inner Release with Primal Rend when available", WAR.JobID)]
     WarriorPrimalReleaseFeature = 2108,
+
+    [SectionCombo("Inner Warrior")]
+    [IconsCombo([WAR.Infuriate, UTL.ArrowLeft, WAR.InnerRelease])]
+    [ExpandedCustomCombo]
+    [CustomComboInfo("Angry Inner Release Feature", "Replace Infuriate with Inner release when available. Also changes to Primal Wrath when available.", WAR.JobID)]
+    WarriorInnerInfuriate = 2117,
 
     [SectionCombo("Buffs")]
     [IconsCombo([WAR.Bloodwhetting, UTL.ArrowLeft, WAR.ThrillOfBattle, UTL.ArrowLeft, WAR.Equilibrium])]

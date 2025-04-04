@@ -25,6 +25,8 @@ internal static class WAR
         Decimate = 3550,
         RawIntuition = 3551,
         Equilibrium = 3552,
+        Onslaught = 7386,
+        Upheaval = 7387,
         InnerRelease = 7389,
         MythrilTempest = 16462,
         ChaoticCyclone = 16463,
@@ -71,6 +73,7 @@ internal static class WAR
             RawIntuition = 56,
             Equilibrium = 58,
             Decimate = 60,
+            Upheaval = 64,
             InnerRelease = 70,
             MythrilTempestTrait = 74,
             NascentFlash = 76,
@@ -284,6 +287,23 @@ internal class WarriorBerserkInnerRelease : CustomCombo
     }
 }
 
+internal class WarriorDashingUpheaval : CustomCombo
+{
+    protected internal override CustomComboPreset Preset { get; } = CustomComboPreset.WarriorDashingUpheaval;
+
+    protected override uint Invoke(uint actionID, uint lastComboMove, float comboTime, byte level)
+    {
+        if (actionID == WAR.Onslaught)
+        {
+        CooldownData cd = GetCooldown(WAR.Upheaval);
+        if (level >= WAR.Levels.Upheaval && (cd.CooldownRemaining <= 5 || IsCooldownUsable(WAR.Upheaval)))
+            return WAR.Upheaval;
+        }
+
+        return actionID;
+    }
+}
+
 internal class WarriorNascentFlashFeature : CustomCombo
 {
     protected internal override CustomComboPreset Preset { get; } = CustomComboPreset.WarriorNascentFlashSyncFeature;
@@ -326,6 +346,26 @@ internal class WarriorBloodwhetting : CustomCombo
 
                 if (level >= WAR.Levels.Equilibrium && IsCooldownUsable(WAR.Equilibrium))
                     return WAR.Equilibrium;
+            }
+        }
+
+        return actionID;
+    }
+}
+
+internal class WarriorInnerInfuriate : CustomCombo
+{
+    protected internal override CustomComboPreset Preset { get; } = CustomComboPreset.WarriorInnerInfuriate;
+
+    protected override uint Invoke(uint actionID, uint lastComboMove, float comboTime, byte level)
+    {
+        if (actionID == WAR.Infuriate)
+        {
+            if (level >= WAR.Levels.InnerRelease && IsRecharging(WAR.Infuriate))
+            {
+                CooldownData cd = GetCooldown(WAR.InnerRelease);
+                if (cd.CooldownRemaining <= 5 || IsCooldownUsable(WAR.InnerRelease) || HasEffect(WAR.Buffs.Wrathful))
+                    return OriginalHook(WAR.InnerRelease);
             }
         }
 
