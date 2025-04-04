@@ -1335,11 +1335,6 @@ public enum CustomComboPreset
     [CustomComboInfo("Kassatsu to Trick", "Replace Kassatsu with Trick Attack while Suiton or Hidden is up.\nCooldown tracking plugin recommended.", NIN.JobID)]
     NinjaKassatsuTrickFeature = 3004,
 
-    [IconsCombo([NIN.Kassatsu, UTL.ArrowLeft, NIN.TrickAttack, UTL.ArrowLeft,  NIN.DreamWithinADream])]
-    [SectionCombo("Ninjutsu features")]
-    [ConflictingCombos(NinjaKassatsuTrickFeature)]
-    [SecretCustomCombo]
-    [CustomComboInfo("Optimised Kassatsu Trick", "Replace Kassatsu With Trick only while Suiton is up and Kassatsu Is off cooldown. Also replaces with Dream within a dream if both on cooldown.", NIN.JobID)]
     NinjaDreamyTrickAttack = 3093,
 
     [IconsCombo([NIN.Chi, UTL.ArrowLeft, NIN.Jin, UTL.Blank, NIN.Buffs.Kassatsu, UTL.Checkmark])]
@@ -1355,11 +1350,6 @@ public enum CustomComboPreset
     [CustomComboInfo("Ten Chi Jin to Meisui", "Replace Ten Chi Jin (the move) with Meisui while Suiton is up.\nCooldown tracking plugin recommended.", NIN.JobID)]
     NinjaTCJMeisuiFeature = 3005,
 
-    [IconsCombo([NIN.Dokumori, UTL.ArrowLeft, NIN.TenChiJin, UTL.ArrowLeft, NIN.Ten, UTL.ArrowLeft, NIN.Chi, UTL.ArrowLeft, NIN.Jin, UTL.ArrowLeft, NIN.Meisui])]
-    [SectionCombo("Ninjutsu features")]
-    [ExpandedCustomCombo]
-    [ConflictingCombos(NinjaTCJMeisuiFeature)]
-    [CustomComboInfo("2 Minute Cooldowns Consolidation", "Consolidate Dokumori, TenChiJin (The Move), its combo steps, and Meisui with eachother.", NIN.JobID)]
     NinjaDokumoriConsolidationCombo = 3025,
 
     [IconsCombo([NIN.Hide, UTL.ArrowLeft, NIN.Mug, UTL.Blank, NIN.Buffs.Hidden, UTL.OutOfBattle])]
